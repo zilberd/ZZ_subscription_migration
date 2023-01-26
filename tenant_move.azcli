@@ -1,0 +1,4 @@
+az account set -s 6b23affb-06e7-449d-a474-10756bd4d1a6                                   # Select your Azure Subscription
+$tenantId=$(az account show --query tenantId)                               # Get your tenantId
+az keyvault update -n codefe4kv --remove Properties.accessPolicies           # Remove the access policies
+az keyvault update -n codefe4kv --set Properties.tenantId=$tenantId          # Update the key vault tenantId
